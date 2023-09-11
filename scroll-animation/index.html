@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll-Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="path" id="path"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var path = document.querySelector('.path');
+
+window.addEventListener('scroll',(e)=>{
+    var scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    var clipPathValue = `polygon(50% 0%, ${61.8 + scrollPercentage * 0.2}% ${38.2 - scrollPercentage * 0.2}%, 100% 50%, ${61.8 + scrollPercentage * 0.2}%
+                 ${61.8 + scrollPercentage * 0.2}%, 50% 100%, ${38.2 - scrollPercentage * 0.2}% ${61.8 + scrollPercentage * 0.2}%, 0% 50%, ${38.2 - scrollPercentage * 0.2}% ${38.2 - scrollPercentage * 0.2}%)`;
+    path.style.clipPath = clipPathValue;
+});
+        })
+       
+       
+    </script>
+</body>
+</html>
